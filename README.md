@@ -15,7 +15,7 @@ To run `debug`, you need to have a C compiler installed on your system, such as 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/MoulatiMehdi/push_swap_tools.git
+git clone https://github.com/MoulatiMehdi/push_swap_debugger.git
 ```
 2. Navigate to the project directory and compile it to create an executable binary:
 
