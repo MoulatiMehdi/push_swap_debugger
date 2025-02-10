@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:48:50 by mmoulati          #+#    #+#             */
-/*   Updated: 2025/02/10 10:58:43 by mmoulati         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:09:15 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 	int		found;
 
 	setvbuf(stdout, NULL, _IONBF, 0);
-	t_cmd cmds[10] = {
+	t_cmd cmds[11] = {
 		{
 			.func = sa,
 			.name = "sa",
@@ -82,6 +82,10 @@ int	main(int argc, char **argv)
 		{
 			.func = pb,
 			.name = "pb",
+		},
+		{
+			.func = ss,
+			.name = "ss",
 		},
 		{
 			.func = ra,
