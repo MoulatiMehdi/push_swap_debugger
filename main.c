@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:48:50 by mmoulati          #+#    #+#             */
-/*   Updated: 2025/01/29 19:19:58 by mmoulati         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:58:43 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#define TABLE_TAB "\t\t"
 #define SEPERATOR "    |    "
 
 typedef struct s_cmd
@@ -32,12 +33,12 @@ void	t_game_print(t_game *head)
 		return ;
 	p_a = head->a;
 	p_b = head->b;
-	printf("┌─────────────┬─────────────┐ \n");
-	printf("│      A      │      B      │\n");
+	printf(TABLE_TAB "┌─────────────┬─────────────┐ \n");
+	printf(TABLE_TAB "│      A      │      B      │\n");
 	while (p_a != NULL || p_b != NULL)
 	{
-		printf("├─────────────┼─────────────┤\n");
-		printf("│   ");
+		printf(TABLE_TAB "├─────────────┼─────────────┤\n");
+		printf(TABLE_TAB "│   ");
 		if (p_a != NULL)
 		{
 			printf("%7d", p_a->num);
@@ -55,7 +56,7 @@ void	t_game_print(t_game *head)
 			printf("       ");
 		printf("   │\n");
 	}
-	printf("└─────────────┴─────────────┘\n");
+	printf(TABLE_TAB "└─────────────┴─────────────┘\n");
 }
 
 int	main(int argc, char **argv)
@@ -114,7 +115,7 @@ int	main(int argc, char **argv)
 	do
 	{
 		found = 0;
-		printf("\033[1;35m push_swap\033[0m > ");
+		printf("\033[1;32m push_swap\033[0m$ ");
 		scanf("%s", str);
 		for (int i = 0; i < 10; i++)
 		{

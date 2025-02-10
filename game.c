@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:52:40 by mmoulati          #+#    #+#             */
-/*   Updated: 2025/01/13 19:05:20 by mmoulati         ###   ########.fr       */
+/*   Updated: 2025/01/16 15:30:15 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ t_game	*t_game_new(long argc, char **argv)
 	i = 1;
 	game->a = NULL;
 	game->b = NULL;
+	game->size = argc - 1;
 	while (i < argc)
 	{
 		t_game_parse(&game, argv[i]);

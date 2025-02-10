@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:36:19 by mmoulati          #+#    #+#             */
-/*   Updated: 2025/01/13 19:01:23 by mmoulati         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:58:49 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack
 {
 	int				num;
+	unsigned int	rank;
 	struct s_stack	*next;
 }					t_stack;
 

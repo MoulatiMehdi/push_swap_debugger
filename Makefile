@@ -8,22 +8,32 @@ CCFLAGS = -Wall -Wextra $(CCDEBUG)
 RMFLAGS = -rf 
 
 # files
-SRCS = $(wildcard ./*.c)
+SRCS=game.c  rule_p.c  rule_r.c  rule_rr.c  rule_s.c  stack.c 
+SRCS_DEBUG = main.c $(SRCS)
+SRCS_BEST=  try_all.c $(SRCS)
 DEPS = $(wildcard ./*.h)
-OBJS = $(SRCS:.c=.o)
-NAME = debug 
+OBJS_DEBUG = $(SRCS_DEBUG:.c=.o)
 
-all : $(NAME) 
+NAME_DEBUG= debug 
+NAME_BEST= best 
 
-$(NAME) : $(SRCS)
+all   : $(NAME_DEBUG)  $(NAME_BEST)
+
+$(NAME_DEBUG) : $(SRCS_DEBUG)
+	$(CC) $(CCFLAGS) $^ -o $@ 
+$(NAME_BEST) : $(SRCS_BEST)
+	$(CC) $(CCFLAGS) $^ -o $@ 
+
+%.o : %.c  
 	$(CC) $(CCFLAGS) $^ -o $@ 
 
 clean : 
-	$(RM) $(RMFLAGS) $(OBJS)
+	$(RM) $(RMFLAGS) $(OBJS_DEBUG) $(OBJS_BEST) 
 
 fclean : clean 
-	$(RM) $(RMFLAGS) $(NAME)
+	$(RM) $(RMFLAGS) $(NAME_DEBUG) $(NAME_BEST)
 
 re : fclean all
 
-.PHONY : re clean fclean all
+.PHONY : re clean fclean all 
+.SECONDARY: $(OBJS_DEBUG) $(OBJS_BEST)
